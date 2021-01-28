@@ -13,5 +13,5 @@ app.use(routes);
 sequelize.sync({force: false}).then( () => {
     const port = 3003;
     app.set("port", port);
-    app.listen(port);
+    app.listen(process.env.PORT || port);
 });
